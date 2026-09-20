@@ -73,7 +73,7 @@ kalman.transitionMatrix = np.array([[1, 0, 1, 0],
                                      [0, 1, 0, 1],
                                      [0, 0, 1, 0],
                                      [0, 0, 0, 1]], np.float32)
-kalman.processNoiseCov = np.eye(4, dtype=np.float32) * 0.03
+kalman.processNoiseCov = np.eye(4, dtype=np.float32) * 0.05
 kalman.measurementNoiseCov = np.eye(2, dtype=np.float32) * 1.0
 kalman.errorCovPost = np.eye(4, dtype=np.float32)
 kalman_ready = False
