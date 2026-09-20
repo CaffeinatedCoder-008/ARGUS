@@ -1,0 +1,21 @@
+Research paper
+
+Karlson, M., Ban, H., Cole, D. G., Abdelhakim, M., & Forsythe, J. (2025). Aiming Error Analysis of Controlled Turret System With AI Target Recognition. International Journal of Control, Automation, and Systems, 23(7), 1919–1929. Used for: architectural precedent (azimuth/elevation turret model, PID control structure) and the finding that AI detection error can dominate total aiming error more than controller error. DOI: http://dx.doi.org/10.1007/s12555-024-1015-9
+
+Dataset
+
+Roboflow Universe — balloon datasets Used for: source of the 452-image balloon dataset used to fine-tune YOLOv8n. https://universe.roboflow.com/search?q=class%3Aballoon
+
+Models / frameworks
+
+Ultralytics YOLOv8 Used for: the object detection framework itself — training (yolov8n.pt base checkpoint) and running inference with the fine-tuned balloon model. https://github.com/ultralytics/ultralytics
+
+zoheb/yolos-small-balloon (Hugging Face) Used for: evaluated as a ready-made, zero-training balloon detector (Vision Transformer, fine-tuned on the Matterport Balloon dataset). Found too slow for real-time use on our hardware; not used in the final pipeline. https://huggingface.co/zoheb/yolos-small-balloon
+
+Reference implementations / repos
+
+caveman210/OpenCV-tracker — "Tennis Ball Tracking & Trajectory Prediction System" Used for: architectural reference — detection (YOLOv8) → Kalman filter tracking → physics-based trajectory prediction. We adapted this same three-stage structure for our balloon-tracking pipeline. Could not pull the exact source file directly (GitHub access restriction), so used its documented architecture as a reference rather than its literal code. https://github.com/caveman210/OpenCV-tracker
+
+tobybreckon/python-examples-cv (Durham University teaching examples, kalman_tracking_live.py) Used for: the actual verified cv2.KalmanFilter setup (measurement matrix, transition matrix, process noise covariance) that we adapted directly into our own Kalman filter tracking code. https://github.com/tobybreckon/python-examples-cv/blob/master/kalman_tracking_live.py
+
+vishnumandala/Ball-Trajectory-Prediction-and-Point-Cloud-Processing Used for: reference on parabolic curve-fitting (least squares) to predict a ball's landing position — relevant to our physics-prediction stage and hit/landing-zone logic. https://github.com/vishnumandala/Ball-Trajectory-Prediction-and-Point-Cloud-Processing
