@@ -10,7 +10,7 @@ Develop an autonomous robotic system capable of detecting,v racking, and hitting
 - Akul Sharma         (akul_s@ch.iitr.ac.in)     |   (akulsharma1129@gmail.com)
 
 ## Current Stage
-Conceptualization 
+Fine tuning Software and making Hardware
 
 ## Project Goals
 
